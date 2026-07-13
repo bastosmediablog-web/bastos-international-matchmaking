@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>BASTOS INTERNATIONAL MATCHMAKING</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #fafafa;
+    color: #333;
+}
+header {
+    background: linear-gradient(135deg,#800000,#d4af37);
+    color: white;
+    text-align: center;
+    padding: 45px 20px;
+}
+.logo {
+    font-size: 50px;
+}
+.container {
+    max-width: 900px;
+    margin: auto;
+    background: white;
+    padding: 25px;
+}
+h2 {
+    color: #800000;
+    border-bottom: 2px solid #d4af37;
+    padding-bottom: 5px;
+}
+.card {
+    background: #f3f3f3;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 15px 0;
+}
+.button {
+    display: inline-block;
+    background: #25D366;
+    color: white;
+    padding: 14px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+footer {
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">❤️</div>
+<h1>BASTOS INTERNATIONAL MATCHMAKING</h1>
+<p>Connecting Hearts Worldwide</p>
+</header>
+<div class="container">
+<h2>Welcome</h2>
+<p>
+BASTOS INTERNATIONAL MATCHMAKING is dedicated to connecting
+people across the world for meaningful relationships, friendship,
+and lifelong partnerships.
+</p>
+<h2>About The Founder</h2>
+<div class="card">
+<p>
+Founded by <b>Bastos - Olajide Segun Hammed</b>.
+</p>
+<p>
+Our mission is to create trusted connections between individuals
+seeking genuine relationships.
+</p>
+</div>
+<h2>Our Services</h2>
+<div class="card">
+<ul>
+<li>International matchmaking</li>
+<li>Marriage introductions</li>
+<li>Relationship consultation</li>
+<li>Partner search assistance</li>
+<li>Private matchmaking support</li>
+</ul>
+</div>
+<h2>Become A Member</h2>
+<div class="card">
+<p>
+To register for matchmaking services, contact us through WhatsApp
+and provide your basic information:
+</p>
+<ul>
+<li>Full name</li>
+<li>Age</li>
+<li>Country</li>
+<li>Relationship goals</li>
+</ul>
+<a class="button" href="https://wa.me/2349070225187">
+Register On WhatsApp
+</a>
+</div>
+<h2>Contact Information</h2>
+<div class="card">
+<p><b>WhatsApp:</b></p>
+<p>+2349070225187</p>
+<p>+2347087619215</p>
+<p><b>Email:</b></p>
+<p>Add your official email address</p>
+</div>
+<h2>Payment Information</h2>
+<div class="card">
+<p>
+Bank: Moniepoint<br>
+Account Number: 8021150675<br>
+Account Name: Olajide Segun
+</p>
+</div>
+<h2>Privacy Notice</h2>
+<p>
+All member information is treated with respect and privacy.
+We encourage genuine users seeking serious relationships.
+</p>
+</div>
+<footer>
+© 2026 BASTOS INTERNATIONAL MATCHMAKING<br>
+Connecting Hearts Worldwide
+</footer>
+</body>
+</html>
