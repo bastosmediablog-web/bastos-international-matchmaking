@@ -10,14 +10,23 @@
     background: linear-gradient(135deg, #0f4c81, #1e88e5, #64b5f6);
     color: #333;
 }
- header {
-    background: linear-gradient(135deg, #0d47a1, #1976d2, #42a5f5);
+  header {
+    background-image: linear-gradient(
+        rgba(0,0,0,0.45),
+        rgba(0,0,0,0.45)
+    ), url('5d7413e3-460d-430e-af12-85573a286690.jpeg');
+
+    background-size: cover;
+    background-position: center;
     color: white;
     text-align: center;
-    padding: 60px 20px;
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    padding: 100px 20px;
+    min-height: 500px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .logo {
     font-size: 50px;
