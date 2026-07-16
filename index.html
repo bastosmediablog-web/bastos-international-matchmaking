@@ -4,52 +4,148 @@
 <title>BASTOS INTERNATIONAL MATCHMAKING</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
- body {
+  /* BASTOS INTERNATIONAL MATCHMAKING
+   Luxury Love & Connection Theme
+*/
+
+body {
     font-family: Arial, sans-serif;
     margin: 0;
-    background: linear-gradient(135deg, #0f4c81, #1e88e5, #64b5f6);
+    background: #f8f9fc;
     color: #333;
 }
-   .hero {
-    min-height: 500px;
-    background-image: url("5d7413e3-460d-430e-af12-85573a286690.jpeg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
 
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding-top: 20px;
+
+/* Navigation */
+nav {
+    background: #0F4C81;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 12px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+nav a:hover {
+    color: #D4AF37;
 }
 
 
-.hero h1 {
+/* Brand Title */
+.brand-title {
+    text-align: center;
     font-family: Georgia, "Times New Roman", serif;
     font-size: 42px;
     font-weight: bold;
     color: white;
+    background: #0F4C81;
+    padding: 20px;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+
+/* Hero Image */
+.hero {
+    min-height: 520px;
+    background-image: url("5d7413e3-460d-430e-af12-85573a286690.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-color: white;
+}
+
+
+/* Slogan */
+.tagline {
     text-align: center;
-    text-shadow: 2px 3px 8px #0f4c81;
+    font-family: Georgia, serif;
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    background: #0F4C81;
+    padding: 15px;
     margin: 0;
 }
 
 
-.tagline {
-    text-align: center;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 30px;
-    font-weight: bold;
-    color: #0f4c81;
-    margin: 25px 0;
+/* Main Containers */
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    background: white;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
 
- @media(max-width:768px){
+/* Headings */
+h2 {
+    color: #0F4C81;
+    font-family: Georgia, serif;
+    border-bottom: 3px solid #D4AF37;
+    padding-bottom: 8px;
+}
+
+
+/* Cards */
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    margin: 20px 0;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+    border-top: 4px solid #D4AF37;
+}
+
+
+/* Buttons */
+.button {
+    display: inline-block;
+    background: #D4AF37;
+    color: white;
+    padding: 16px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: #0F4C81;
+    transform: scale(1.05);
+}
+
+
+/* Images */
+img {
+    max-width: 100%;
+}
+
+
+/* Footer */
+footer {
+    background: #0F4C81;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+
+/* Mobile Design */
+@media(max-width:768px){
 
 .brand-title {
     font-size: 26px;
-    padding: 10px;
+    padding: 15px;
 }
 
 .hero {
@@ -60,34 +156,16 @@
     font-size: 22px;
 }
 
+nav a {
+    display: inline-block;
+    margin: 8px;
 }
-
-
-.hero h1 {
-    font-size: 28px;
-}
-
-
-.hero h2 {
-    font-size: 18px;
-}
-
-}
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-
 
 .container {
-    max-width: 900px;
-    margin: 40px auto;
-    background: rgba(255,255,255,0.96);
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    margin: 20px;
+    padding: 20px;
+}
+
 }
 h2 {
     color: #800000;
