@@ -10,48 +10,39 @@
     background: linear-gradient(135deg, #0f4c81, #1e88e5, #64b5f6);
     color: #333;
 }
-    .hero {
-    min-height: 500px;
-    background-image:
-    linear-gradient(
-        rgba(0,0,0,0.35),
-        rgba(0,0,0,0.35)
-    ),
-    url("5d7413e3-460d-430e-af12-85573a286690.jpeg");
+   
+     .hero {
+    min-height: 550px;
+    background-image: url("5d7413e3-460d-430e-af12-85573a286690.jpeg");
 
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center center;
     background-size: contain;
 
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+
+    padding-bottom: 40px;
+    text-align: center;
 }
 
-     
-
-
-  @media (max-width: 768px) {
+ @media (max-width:768px){
 
 .hero {
-    min-height: 450px;
+    min-height: 420px;
     background-size: contain;
-    padding-top: 25px;
+    justify-content: flex-end;
+    padding-bottom: 20px;
 }
 
 .hero h1 {
-    font-size: 26px;
-    letter-spacing: 1px;
+    font-size: 24px;
 }
 
 .hero h2 {
-    font-size: 20px;
-}
-
-.hero p {
-    font-size: 15px;
+    font-size: 18px;
 }
 
 }
