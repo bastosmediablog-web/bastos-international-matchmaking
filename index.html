@@ -10,19 +10,18 @@
     background: linear-gradient(135deg, #0f4c81, #1e88e5, #64b5f6);
     color: #333;
 }
-   .hero {
+    .hero {
+    min-height: 500px;
     background-image: 
         linear-gradient(
-            rgba(0,0,0,0.45),
-            rgba(0,0,0,0.45)
+            rgba(0,0,0,0.35),
+            rgba(0,0,0,0.35)
         ),
-        url('5d7413e3-460d-430e-af12-85573a286690.jpeg');
+        url("5d7413e3-460d-430e-af12-85573a286690.jpeg");
 
-    background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
-    min-height: 500px;
-    background-color: #ffffff;
+    background-size: contain;
 
     display: flex;
     align-items: center;
@@ -32,7 +31,7 @@
 
 @media (max-width: 768px) {
     .hero {
-        min-height: 420px;
+        min-height: 450px;
         background-size: contain;
         background-position: center center;
     }
