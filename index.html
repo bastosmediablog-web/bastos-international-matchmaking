@@ -14,17 +14,19 @@
      background-image: linear-gradient(
         rgba(0,0,0,0.45),
         rgba(0,0,0,0.45)
-    ), url('5325F316-098B-46E3-B01C-AC3783E62CA5.png');
-    background-size: cover;
-    background-position: center;
-    color: white;
-    text-align: center;
-    @media (max-width: 768px) {
+     .hero {
+    background-image: url('5d7413e3-460d-430e-af12-85573a286690.jpeg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 500px;
+    background-color: #ffffff;
+}
+@media (max-width: 768px) {
     .hero {
-        min-height: 450px;
-        padding: 60px 15px;
+        min-height: 420px;
+        background-size: contain;
         background-position: center center;
-        background-size: cover;
     }
 }
 
