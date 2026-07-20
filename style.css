@@ -198,11 +198,15 @@ color:#111827;
 
 }
 
-.btn-primary:hover{
+ .btn-primary:hover{
 
-background:white;
+background:#B89233;
 
-transform:translateY(-3px);
+color:white;
+
+transform:translateY(-4px);
+
+box-shadow:0 15px 35px rgba(200,167,78,.35);
 
 }
 
