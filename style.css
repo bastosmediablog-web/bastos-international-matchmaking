@@ -230,7 +230,7 @@ color:#111827;
 HERO
 ==============================*/
 
-.hero{
+ .hero{
 
 height:100vh;
 
@@ -238,13 +238,15 @@ background:
 
 linear-gradient(rgba(15,23,42,.72),rgba(15,23,42,.72)),
 
-url("../images/hero.jpg")
+url("5d7413e3-460d-430e-af12-85573a286690.jpeg")
 
 center center/cover no-repeat;
 
 display:flex;
 
 align-items:center;
+
+justify-content:center;
 
 text-align:center;
 
