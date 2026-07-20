@@ -104,23 +104,47 @@ height:80px;
 
 }
 
-.logo{
+ .logo{
+
+display:flex;
+
+flex-direction:column;
 
 font-family:'Playfair Display',serif;
 
-font-size:32px;
+font-size:34px;
 
-font-weight:700;
+font-weight:800;
 
-color:#fff;
+color:white;
 
-letter-spacing:1px;
+line-height:1;
+
+letter-spacing:2px;
 
 }
 
 .logo span{
 
 color:#C8A74E;
+
+}
+
+.logo small{
+
+font-family:'Poppins',sans-serif;
+
+font-size:11px;
+
+letter-spacing:3px;
+
+text-transform:uppercase;
+
+color:#d6d6d6;
+
+margin-top:6px;
+
+font-weight:500;
 
 }
 
