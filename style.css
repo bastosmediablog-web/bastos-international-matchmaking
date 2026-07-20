@@ -647,3 +647,34 @@ transform:translateY(-4px);
 background:#0F172A;
 
 }
+section:nth-child(even){
+
+background:#ffffff;
+
+}
+
+section:nth-child(odd){
+
+background:#FAF7F2;
+
+}
+.about img,
+.stat img{
+
+transition:.4s;
+
+}
+
+.about img:hover,
+.stat img:hover{
+
+transform:scale(1.03);
+
+}
+p{
+
+font-size:17px;
+
+color:#4B5563;
+
+}
