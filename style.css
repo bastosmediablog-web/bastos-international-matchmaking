@@ -551,3 +551,69 @@ padding:70px 0;
 }
 
 }
+/* JavaScript Animation Classes */
+
+.hidden{
+    opacity:0;
+    transform:translateY(50px);
+    transition:all .8s ease;
+}
+
+.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* Active Menu */
+
+nav a.active{
+    color:#C8A74E;
+}
+
+/* Scroll To Top Button */
+
+#topBtn{
+
+position:fixed;
+
+bottom:25px;
+
+left:25px;
+
+width:55px;
+
+height:55px;
+
+border:none;
+
+border-radius:50%;
+
+background:#C8A74E;
+
+color:white;
+
+font-size:24px;
+
+cursor:pointer;
+
+display:none;
+
+justify-content:center;
+
+align-items:center;
+
+box-shadow:0 8px 20px rgba(0,0,0,.2);
+
+transition:.3s;
+
+z-index:9999;
+
+}
+
+#topBtn:hover{
+
+transform:translateY(-4px);
+
+background:#0F172A;
+
+}
