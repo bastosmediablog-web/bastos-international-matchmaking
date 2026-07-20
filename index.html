@@ -767,3 +767,244 @@ Register Now
 </div>
 
 </section>
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="container">
+
+<h2 style="text-align:center;font-size:42px;margin-bottom:50px;">
+Contact Us
+</h2>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:35px;">
+
+<div class="stat">
+
+<h3>📱 WhatsApp</h3>
+
+<p>+234 907 022 5187</p>
+
+<p>+234 708 761 9215</p>
+
+<a href="https://wa.me/2349070225187"
+class="btn btn-primary"
+style="margin-top:20px;display:inline-block;">
+Chat on WhatsApp
+</a>
+
+</div>
+
+<div class="stat">
+
+<h3>📧 Email</h3>
+
+<p>bastosmediablog@gmail.com</p>
+
+</div>
+
+<div class="stat">
+
+<h3>🌍 Worldwide Matchmaking</h3>
+
+<p>
+
+Serving genuine singles from different countries through trusted and confidential matchmaking services.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PAYMENT -->
+
+<section style="background:#fafafa;">
+
+<div class="container">
+
+<h2 style="text-align:center;font-size:42px;margin-bottom:40px;">
+Payment Information
+</h2>
+
+<div class="stat" style="max-width:600px;margin:auto;">
+
+<h3>Bank Details</h3>
+
+<p><strong>Bank:</strong> Moniepoint</p>
+
+<p><strong>Account Number:</strong> 8021150675</p>
+
+<p><strong>Account Name:</strong> Olajide Segun</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PRIVACY -->
+
+<section>
+
+<div class="container">
+
+<div class="stat">
+
+<h2 style="margin-bottom:20px;">Privacy & Confidentiality</h2>
+
+<p>
+
+Your privacy is important to us. All personal information shared with Bastos International Matchmaking is handled confidentially and used solely for the purpose of providing our matchmaking services.
+
+</p>
+
+<p style="margin-top:20px;">
+
+We are committed to creating a safe, respectful, and trustworthy environment for every member.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer style="background:#0F172A;color:white;padding:60px 0 30px;">
+
+<div class="container">
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:40px;">
+
+<div>
+
+<h2 style="color:#D4AF37;">
+Bastos International Matchmaking
+</h2>
+
+<p style="margin-top:20px;">
+
+Connecting Hearts Worldwide through genuine relationships, trust, and lasting love.
+
+</p>
+
+</div>
+
+<div>
+
+<h3 style="color:#D4AF37;">Quick Links</h3>
+
+<p><a href="index.html" style="color:white;text-decoration:none;">Home</a></p>
+
+<p><a href="about.html" style="color:white;text-decoration:none;">About</a></p>
+
+<p><a href="services.html" style="color:white;text-decoration:none;">Services</a></p>
+
+<p><a href="success.html" style="color:white;text-decoration:none;">Success Stories</a></p>
+
+<p><a href="registration.html" style="color:white;text-decoration:none;">Register</a></p>
+
+</div>
+
+<div>
+
+<h3 style="color:#D4AF37;">Contact</h3>
+
+<p>📱 +234 907 022 5187</p>
+
+<p>📱 +234 708 761 9215</p>
+
+<p>📧 bastosmediablog@gmail.com</p>
+
+</div>
+
+</div>
+
+<hr style="margin:40px 0;border-color:rgba(255,255,255,.15);">
+
+<p style="text-align:center;">
+
+© 2026 Bastos International Matchmaking. All Rights Reserved.
+
+</p>
+
+<p style="text-align:center;color:#D4AF37;">
+
+❤️ Connecting Hearts Worldwide ❤️
+
+</p>
+
+</div>
+
+</footer>
+
+<!-- Floating WhatsApp Button -->
+
+<a href="https://wa.me/2349070225187"
+style="
+position:fixed;
+bottom:25px;
+right:25px;
+width:65px;
+height:65px;
+border-radius:50%;
+background:#25D366;
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:32px;
+text-decoration:none;
+box-shadow:0 10px 25px rgba(0,0,0,.25);
+z-index:9999;
+">
+
+💬
+
+</a>
+
+<script>
+
+const observer = new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.animate([
+
+{opacity:0,transform:"translateY(40px)"},
+
+{opacity:1,transform:"translateY(0)"}
+
+],{
+
+duration:700,
+
+fill:"forwards"
+
+});
+
+}
+
+});
+
+});
+
+document.querySelectorAll("section").forEach(section=>{
+
+observer.observe(section);
+
+});
+
+</script>
+
+</body>
+</html>
