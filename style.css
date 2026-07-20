@@ -1,0 +1,145 @@
+/* NEW MODERN HEADER */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 8%;
+background:#0F172A;
+position:sticky;
+top:0;
+z-index:999;
+}
+
+.logo{
+color:#fff;
+font-size:24px;
+font-family:Georgia,serif;
+font-weight:bold;
+}
+
+.menu{
+display:flex;
+gap:30px;
+align-items:center;
+}
+
+.menu a{
+color:white;
+text-decoration:none;
+font-weight:600;
+transition:.3s;
+}
+
+.menu a:hover{
+color:#D4AF37;
+}
+
+.nav-btn{
+background:#D4AF37;
+padding:12px 25px;
+border-radius:30px;
+color:#111 !important;
+}
+
+.hero{
+position:relative;
+height:85vh;
+background:url("5d7413e3-460d-430e-af12-85573a286690.jpeg") center center/cover;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.hero-overlay{
+position:absolute;
+inset:0;
+background:rgba(0,0,0,.55);
+}
+
+.hero-content{
+position:relative;
+max-width:850px;
+padding:20px;
+color:white;
+}
+
+.hero-badge{
+display:inline-block;
+padding:10px 20px;
+background:#D4AF37;
+border-radius:40px;
+color:#111;
+font-weight:bold;
+margin-bottom:25px;
+}
+
+.hero h1{
+font-size:58px;
+line-height:1.1;
+margin-bottom:20px;
+font-family:Georgia,serif;
+}
+
+.hero p{
+font-size:22px;
+line-height:1.7;
+margin-bottom:35px;
+}
+
+.hero-buttons{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.button{
+background:#D4AF37;
+color:#111;
+padding:16px 36px;
+border-radius:40px;
+text-decoration:none;
+font-weight:bold;
+}
+
+.button:hover{
+background:white;
+}
+
+.button-outline{
+border:2px solid white;
+padding:16px 36px;
+border-radius:40px;
+color:white;
+text-decoration:none;
+font-weight:bold;
+}
+
+.button-outline:hover{
+background:white;
+color:#111;
+}
+
+@media(max-width:768px){
+
+.navbar{
+flex-direction:column;
+}
+
+.menu{
+margin-top:15px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.hero h1{
+font-size:36px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+}
