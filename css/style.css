@@ -870,3 +870,69 @@ blockquote {
     background:#8e0d36;
 
 }
+ /* REGISTER PAGE */
+
+.register-page {
+
+min-height:100vh;
+padding-top:120px;
+padding-bottom:80px;
+background:#fff7f5;
+
+}
+
+
+.register-card {
+
+background:white;
+padding:45px;
+border-radius:20px;
+
+box-shadow:
+0 15px 40px rgba(0,0,0,.08);
+
+}
+
+
+.register-card h1 {
+
+font-family:"Playfair Display", serif;
+
+font-size:42px;
+
+}
+
+
+.register-card .form-control,
+.register-card .form-select {
+
+padding:14px;
+border-radius:12px;
+
+border:1px solid #ddd;
+
+}
+
+
+.register-card label {
+
+font-weight:600;
+
+}
+
+
+@media(max-width:576px){
+
+.register-card{
+
+padding:25px;
+
+}
+
+.register-card h1{
+
+font-size:32px;
+
+}
+
+}
