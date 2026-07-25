@@ -164,7 +164,7 @@ h3 {
   color: white;
   background:
     linear-gradient(90deg, rgba(45, 5, 17, 0.9), rgba(92, 15, 37, 0.62), rgba(140, 45, 63, 0.25)),
-     url("../images/hero.jpg") center / cover no-repeat,
+     url("../hero.jfif") center / cover no-repeat,
     linear-gradient(135deg, #3a0817, #8f2444);
 }
 
@@ -174,7 +174,7 @@ h3 {
   color: white;
   background:
     linear-gradient(90deg, rgba(45, 5, 17, 0.9), rgba(92, 15, 37, 0.62), rgba(140, 45, 63, 0.25)),
-    url("../images/hero.jpg") center / cover no-repeat,
+    url("../hero.jfif") center / cover no-repeat,
     linear-gradient(135deg, #3a0817, #8f2444);
 }
 
