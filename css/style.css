@@ -164,23 +164,18 @@ h3 {
   color: white;
   background:
     linear-gradient(90deg, rgba(45, 5, 17, 0.9), rgba(92, 15, 37, 0.62), rgba(140, 45, 63, 0.25)),
-    url("../images/hero.jfif") center / cover no-repeat,
+     url("../images/hero.jpg") center / cover no-repeat,
     linear-gradient(135deg, #3a0817, #8f2444);
 }
 
-.hero::before {
-  position: absolute;
-  top: 0;
-  right: 8%;
-  width: min(43vw, 560px);
-  height: 82%;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 50% 50% 0 0;
-  background: linear-gradient(145deg, rgba(255, 222, 212, 0.2), transparent);
-  box-shadow:
-    0 0 0 28px rgba(255, 255, 255, 0.025),
-    0 0 0 60px rgba(255, 255, 255, 0.018);
-  content: "";
+ .hero {
+  position: relative;
+  min-height: 760px;
+  color: white;
+  background:
+    linear-gradient(90deg, rgba(45, 5, 17, 0.9), rgba(92, 15, 37, 0.62), rgba(140, 45, 63, 0.25)),
+    url("../images/hero.jpg") center / cover no-repeat,
+    linear-gradient(135deg, #3a0817, #8f2444);
 }
 
 .hero-overlay {
