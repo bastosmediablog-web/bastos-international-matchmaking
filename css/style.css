@@ -798,3 +798,75 @@ blockquote {
     margin-top: 42px;
   }
 }
+/* Signup Page */
+
+.signup-section {
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background: #fff5f7;
+}
+
+
+.signup-box {
+    background: white;
+    width: 420px;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+
+.signup-box h1 {
+    text-align: center;
+    color: #b51245;
+}
+
+
+.signup-box p {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+
+.signup-box label {
+    display:block;
+    margin-top:15px;
+    font-weight:bold;
+}
+
+
+.signup-box input,
+.signup-box select {
+
+    width:100%;
+    padding:12px;
+    margin-top:8px;
+    border:1px solid #ddd;
+    border-radius:8px;
+
+}
+
+
+.signup-box button {
+
+    width:100%;
+    margin-top:25px;
+    padding:14px;
+    background:#b51245;
+    color:white;
+    border:none;
+    border-radius:25px;
+    font-size:16px;
+    cursor:pointer;
+
+}
+
+
+.signup-box button:hover {
+
+    background:#8e0d36;
+
+}
