@@ -1326,3 +1326,270 @@ font-size:36px;
 }
 
 }
+/* MESSAGES PAGE */
+
+
+.messages-page {
+
+padding-top:120px;
+padding-bottom:80px;
+background:#fff7f5;
+min-height:100vh;
+
+}
+
+
+
+.messages-container {
+
+display:grid;
+
+grid-template-columns:350px 1fr;
+
+background:white;
+
+border-radius:20px;
+
+overflow:hidden;
+
+box-shadow:
+0 10px 30px rgba(0,0,0,.08);
+
+}
+
+
+
+.conversation-list {
+
+padding:25px;
+
+border-right:1px solid #eee;
+
+}
+
+
+
+.conversation-list h2 {
+
+font-family:"Playfair Display",serif;
+
+margin-bottom:25px;
+
+}
+
+
+
+.conversation {
+
+display:flex;
+
+gap:15px;
+
+padding:15px;
+
+border-radius:12px;
+
+cursor:pointer;
+
+margin-bottom:10px;
+
+}
+
+
+
+.conversation:hover,
+.conversation.active {
+
+background:#fff0f4;
+
+}
+
+
+
+.avatar {
+
+width:50px;
+
+height:50px;
+
+border-radius:50%;
+
+background:#f1d8df;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-weight:bold;
+
+color:#b51245;
+
+}
+
+
+
+.conversation h4 {
+
+font-size:18px;
+
+margin:0;
+
+}
+
+
+
+.conversation p {
+
+margin:5px 0;
+
+color:#777;
+
+font-size:14px;
+
+}
+
+
+
+
+
+.chat-box {
+
+display:flex;
+
+flex-direction:column;
+
+height:600px;
+
+}
+
+
+
+.chat-header {
+
+padding:25px;
+
+border-bottom:1px solid #eee;
+
+}
+
+
+
+.chat-header h3 {
+
+font-family:"Playfair Display",serif;
+
+margin:0;
+
+}
+
+
+
+.chat-header span {
+
+color:green;
+
+font-size:14px;
+
+}
+
+
+
+.chat-body {
+
+flex:1;
+
+padding:25px;
+
+overflow:auto;
+
+}
+
+
+
+.message {
+
+max-width:70%;
+
+padding:15px;
+
+border-radius:18px;
+
+margin-bottom:15px;
+
+}
+
+
+
+.received {
+
+background:#f7e5eb;
+
+}
+
+
+
+.sent {
+
+background:#b51245;
+
+color:white;
+
+margin-left:auto;
+
+}
+
+
+
+
+
+.chat-input {
+
+display:flex;
+
+padding:20px;
+
+border-top:1px solid #eee;
+
+gap:10px;
+
+}
+
+
+
+.chat-input input {
+
+flex:1;
+
+padding:12px 18px;
+
+border-radius:25px;
+
+border:1px solid #ddd;
+
+}
+
+
+
+
+@media(max-width:768px){
+
+
+.messages-container{
+
+grid-template-columns:1fr;
+
+}
+
+
+.conversation-list{
+
+border-right:none;
+
+border-bottom:1px solid #eee;
+
+}
+
+
+}
