@@ -936,3 +936,113 @@ font-size:32px;
 }
 
 }
+/* DASHBOARD */
+
+.dashboard-page {
+
+padding-top:120px;
+padding-bottom:80px;
+background:#fff7f5;
+min-height:100vh;
+
+}
+
+
+.dashboard-header {
+
+margin-bottom:50px;
+
+}
+
+
+.dashboard-header h1 {
+
+font-family:"Playfair Display", serif;
+font-size:48px;
+
+}
+
+
+
+.dashboard-card {
+
+background:white;
+padding:30px;
+border-radius:18px;
+
+box-shadow:
+0 10px 30px rgba(0,0,0,.08);
+
+height:100%;
+
+}
+
+
+.dashboard-card h3 {
+
+font-family:"Playfair Display",serif;
+
+margin-bottom:20px;
+
+}
+
+
+
+.progress {
+
+height:25px;
+border-radius:20px;
+
+margin-bottom:20px;
+
+}
+
+
+
+.progress-bar {
+
+background:#b51245;
+
+}
+
+
+
+.match-preview {
+
+padding:15px 0;
+
+border-bottom:1px solid #eee;
+
+}
+
+
+
+.action-card {
+
+background:white;
+
+padding:25px;
+
+border-radius:15px;
+
+height:100%;
+
+transition:.3s;
+
+}
+
+
+
+.action-card:hover {
+
+transform:translateY(-5px);
+
+}
+
+
+
+.action-card h4 {
+
+font-family:"Playfair Display",serif;
+
+}
