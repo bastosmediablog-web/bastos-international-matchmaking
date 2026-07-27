@@ -68,7 +68,7 @@ Tell us about yourself and begin your matchmaking journey.
 
 
 
-<form>
+ <form id="registerForm">
 
 
 <div class="mb-3">
@@ -77,7 +77,12 @@ Tell us about yourself and begin your matchmaking journey.
 Full Name
 </label>
 
-<input type="text" class="form-control" placeholder="Your name">
+ <input
+type="text"
+id="fullName"
+class="form-control"
+placeholder="Your name"
+required>
 
 </div>
 
@@ -89,7 +94,12 @@ Full Name
 Email Address
 </label>
 
-<input type="email" class="form-control" placeholder="Email">
+ <input
+type="email"
+id="email"
+class="form-control"
+placeholder="Email"
+required>
 
 </div>
 
@@ -101,7 +111,12 @@ Email Address
 Password
 </label>
 
-<input type="password" class="form-control" placeholder="Create password">
+ <input
+type="password"
+id="password"
+class="form-control"
+placeholder="Create password"
+required>
 
 </div>
 
@@ -116,7 +131,10 @@ Password
 Gender
 </label>
 
-<select class="form-select">
+ <select
+id="gender"
+class="form-select"
+required>
 
 <option>Select</option>
 <option>Male</option>
@@ -134,7 +152,11 @@ Gender
 Date of Birth
 </label>
 
-<input type="date" class="form-control">
+ <input
+type="date"
+id="dob"
+class="form-control"
+required>
 
 </div>
 
@@ -149,7 +171,12 @@ Date of Birth
 Location
 </label>
 
-<input type="text" class="form-control" placeholder="City / Country">
+ <input
+type="text"
+id="location"
+class="form-control"
+placeholder="City / Country"
+required>
 
 </div>
 
@@ -161,7 +188,10 @@ Location
 Relationship Goal
 </label>
 
-<select class="form-select">
+ <select
+id="relationshipGoal"
+class="form-select"
+required>
 
 <option>Select</option>
 <option>Marriage</option>
@@ -174,7 +204,9 @@ Relationship Goal
 
 
 
-<button class="btn btn-primary-brand w-100 btn-lg">
+ <button
+type="submit"
+class="btn btn-primary-brand w-100 btn-lg">
 
 Create My Profile →
 
@@ -214,7 +246,8 @@ Create My Profile →
 </footer>
 
 
-
+<script type="module" src="js/firebase.js"></script>
+<script type="module" src="js/auth.js"></script>
 </body>
 
 </html>
