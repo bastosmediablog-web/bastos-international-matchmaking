@@ -1,4 +1,4 @@
-<!doctype html>
+ <!doctype html>
 <html lang="en">
 
 <head>
@@ -26,7 +26,7 @@
 
 <div class="container">
 
-<a class="navbar-brand" href="dashboard.html">
+<a class="navbar-brand" href="index.html">
 
 <span class="brand-mark">B</span>
 <span>Bastos</span>
@@ -34,14 +34,6 @@
 
 </a>
 
-
-<div class="ms-auto">
-
-<a href="dashboard.html" class="btn btn-nav-outline">
-Dashboard
-</a>
-
-</div>
 
 </div>
 
@@ -51,198 +43,119 @@ Dashboard
 
 
 
-<main class="profile-page">
+<main class="dashboard-page">
 
 
 <div class="container">
 
 
-<div class="row g-5">
+<div class="row justify-content-center">
 
 
-<!-- PROFILE IMAGE -->
-
-<div class="col-lg-4">
+<div class="col-lg-7">
 
 
-<div class="profile-photo-card">
+<div class="register-card">
 
 
-<div class="profile-placeholder">
-
-B
-
-</div>
-
-
-<button class="btn btn-primary-brand mt-3 w-100">
-
-Upload Photo
-
-</button>
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-<!-- PROFILE INFORMATION -->
-
-<div class="col-lg-8">
-
-
-<div class="profile-card">
-
+<div class="text-center mb-4">
 
 <p class="eyebrow">
 My Profile
 </p>
 
-
-<h1>
-Amara, 29
+<h1 id="profileName">
+Loading...
 </h1>
 
-
-<p class="location">
-📍 Lagos, Nigeria
+<p>
+Update your information and tell your story.
 </p>
 
-
-
-<div class="profile-progress">
-
-
-<h4>
-Profile Strength
-</h4>
-
-
-<div class="progress">
-
-<div class="progress-bar"
-style="width:75%">
-
-75%
-
 </div>
 
-</div>
 
+
+<form id="profileForm">
+
+
+<div class="mb-3">
+
+<label class="form-label">
+Full Name
+</label>
+
+<input 
+type="text"
+id="fullName"
+class="form-control">
 
 </div>
 
 
 
+<div class="mb-3">
+
+<label class="form-label">
+Location
+</label>
+
+<input 
+type="text"
+id="location"
+class="form-control">
+
+</div>
 
 
-<h2>
+
+<div class="mb-3">
+
+<label class="form-label">
+Relationship Goal
+</label>
+
+<select id="goal" class="form-select">
+
+<option>Marriage</option>
+<option>Serious Relationship</option>
+<option>Companionship</option>
+
+</select>
+
+</div>
+
+
+
+<div class="mb-3">
+
+<label class="form-label">
 About Me
-</h2>
+</label>
 
-
-<p>
-
-I am a creative and ambitious person who enjoys meaningful conversations,
-family values, travel, and building a peaceful future with the right partner.
-
-</p>
-
-
-
-
-<h2>
-My Details
-</h2>
-
-
-
-<div class="row">
-
-
-<div class="col-md-6">
-
-<p>
-<strong>Profession:</strong>
-Creative Director
-</p>
-
-</div>
-
-
-<div class="col-md-6">
-
-<p>
-<strong>Relationship Goal:</strong>
-Marriage
-</p>
-
-</div>
-
-
-<div class="col-md-6">
-
-<p>
-<strong>Education:</strong>
-University Graduate
-</p>
-
-</div>
-
-
-<div class="col-md-6">
-
-<p>
-<strong>Lifestyle:</strong>
-Healthy & Active
-</p>
-
-</div>
-
+<textarea
+id="about"
+class="form-control"
+rows="5"></textarea>
 
 </div>
 
 
 
+<button class="btn btn-primary-brand w-100 btn-lg">
+
+Save Profile →
+
+</button>
 
 
-<h2>
-Interests
-</h2>
-
-
-<div class="interest-tags">
-
-<span>Travel</span>
-<span>Music</span>
-<span>Cooking</span>
-<span>Fitness</span>
-<span>Family</span>
-
-</div>
-
-
-
-
-<a href="matches.html"
-class="btn btn-primary-brand mt-4">
-
-Find My Matches →
-
-</a>
-
+</form>
 
 
 </div>
 
 
 </div>
-
 
 
 </div>
@@ -255,18 +168,7 @@ Find My Matches →
 
 
 
-
-<footer class="footer">
-
-<div class="container text-center">
-
-<p>
-© 2026 Bastos Matchmaking. All Rights Reserved.
-</p>
-
-</div>
-
-</footer>
+<script type="module" src="js/profile.js"></script>
 
 
 </body>
