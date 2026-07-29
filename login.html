@@ -81,7 +81,7 @@ Continue your journey toward meaningful connection.
 
 
 
-<form>
+ <form id="loginForm">
 
 
 <div class="mb-3">
@@ -90,10 +90,12 @@ Continue your journey toward meaningful connection.
 Email Address
 </label>
 
-<input 
+ <input 
 type="email"
+id="email"
 class="form-control"
-placeholder="Enter your email">
+placeholder="Enter your email"
+required>
 
 </div>
 
@@ -106,10 +108,12 @@ placeholder="Enter your email">
 Password
 </label>
 
-<input 
+ <input 
 type="password"
+id="password"
 class="form-control"
-placeholder="Enter your password">
+placeholder="Enter your password"
+required>
 
 </div>
 
@@ -134,12 +138,13 @@ Forgot Password?
 
 
 
-<a href="dashboard.html"
+ <button
+type="submit"
 class="btn btn-primary-brand w-100 btn-lg">
 
 Login →
 
-</a>
+</button>
 
 
 </form>
@@ -191,7 +196,7 @@ Create Profile
 </footer>
 
 
-
+<script type="module" src="js/login.js"></script>
 </body>
 
 </html>
