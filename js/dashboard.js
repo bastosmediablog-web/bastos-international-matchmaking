@@ -1,7 +1,8 @@
-import { auth, db } from "./firebase.js";
+ import { auth, db } from "./firebase.js";
 
 import {
-  onAuthStateChanged
+  onAuthStateChanged,
+  signOut
 } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-auth.js";
 
 import {
@@ -15,7 +16,16 @@ const userName = document.getElementById("userName");
 
 onAuthStateChanged(auth, async (user) => {
 
-  if (user) {
+  if (!user) {
+
+    // No logged-in user
+    window.location.href = "login.html";
+    return;
+
+  }
+
+
+  try {
 
     const userRef = doc(db, "users", user.uid);
 
@@ -26,14 +36,18 @@ onAuthStateChanged(auth, async (user) => {
 
       const data = userSnap.data();
 
-      userName.textContent = data.fullName;
+      userName.textContent = data.fullName || "Member";
+
+    } else {
+
+      userName.textContent = "Member";
 
     }
 
 
-  } else {
+  } catch (error) {
 
-    window.location.href = "login.html";
+    console.error("Error loading profile:", error);
 
   }
 
