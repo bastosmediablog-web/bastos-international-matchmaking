@@ -90,17 +90,19 @@ Profile Completion
 </h3>
 
 
-<div class="progress">
+ <div
+id="profileProgress"
+class="progress-bar"
+style="width:0%">
 
-<div class="progress-bar"
-style="width:65%">
-65%
+0%
+
 </div>
 
 </div>
 
 
-<p>
+ <p id="profileMessage">
 Complete your profile to receive better matches.
 </p>
 
@@ -123,11 +125,21 @@ Complete Profile
 
 <div class="col-lg-4">
 
-<div class="dashboard-card">
+ <div class="dashboard-card">
 
 <h3>
 Suggested Matches
 </h3>
+
+<div id="matchesContainer">
+
+<p>
+Finding compatible members...
+</p>
+
+</div>
+
+</div>
 
 
 <div class="match-preview">
