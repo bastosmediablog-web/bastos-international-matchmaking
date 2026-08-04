@@ -5,13 +5,23 @@ import {
 } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-auth.js";
 
 import {
-  collection,
-  getDocs
+  doc,
+  getDoc
 } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
 
-const membersContainer = document.getElementById("membersContainer");
+// Get member ID from URL
+const params = new URLSearchParams(window.location.search);
+const memberId = params.get("id");
 
-// Calculate age from date of birth
+// Page elements
+const memberName = document.getElementById("memberName");
+const memberAgeGender = document.getElementById("memberAgeGender");
+const memberLocation = document.getElementById("memberLocation");
+const memberGoal = document.getElementById("memberGoal");
+const memberAbout = document.getElementById("memberAbout");
+const memberPhoto = document.getElementById("memberPhoto");
+
+// Calculate age
 function calculateAge(dob) {
 
   if (!dob) return "Not specified";
@@ -31,136 +41,10 @@ function calculateAge(dob) {
   }
 
   return age;
-}
-
-// Display members
-async function loadMembers(currentUserId) {
-
-  try {
-
-    const querySnapshot = await getDocs(collection(db, "users"));
-
-    membersContainer.innerHTML = "";
-
-    let html = "";
-    let totalMembers = 0;
-
-    querySnapshot.forEach((document) => {
-
-      if (document.id === currentUserId) return;
-
-      const member = document.data();
-
-      totalMembers++;
-
-      html += `
-
-      <div class="col-md-6 col-lg-4">
-
-        <div class="dashboard-card h-100">
-
-          <h3>${member.fullName || "Member"}</h3>
-
-          <p>
-            <strong>Age:</strong><br>
-            ${calculateAge(member.dob)} years
-          </p>
-
-          <p>
-            <strong>📍 Location:</strong><br>
-            ${member.location || "Not provided"}
-          </p>
-
-          <p>
-            <strong>💍 Relationship Goal:</strong><br>
-            ${member.relationshipGoal || "Not specified"}
-          </p>
-
-          <p>
-            <strong>About Me</strong><br>
-            ${member.about || "No description yet."}
-          </p>
-
-          <button
-            class="btn btn-primary-brand w-100"
-            disabled>
-
-            View Profile
-
-          </button>
-
-        </div>
-
-      </div>
-
-      `;
-
-    });
-
-    if (totalMembers === 0) {
-
-      membersContainer.innerHTML = `
-
-      <div class="col-12">
-
-        <div class="dashboard-card text-center">
-
-          <h3>No Members Yet</h3>
-
-          <p>
-
-            You're currently the only registered member.
-
-          </p>
-
-          <p>
-
-            Invite your friends to join Bastos Matchmaking.
-
-          </p>
-
-        </div>
-
-      </div>
-
-      `;
-
-      return;
-
-    }
-
-    membersContainer.innerHTML = html;
-
-  } catch (error) {
-
-    console.error("Members Error:", error);
-
-    membersContainer.innerHTML = `
-
-    <div class="col-12">
-
-      <div class="dashboard-card text-center">
-
-        <h3>Something went wrong</h3>
-
-        <p>
-
-          We couldn't load the members list.
-
-        </p>
-
-      </div>
-
-    </div>
-
-    `;
-
-  }
 
 }
 
-// Protect page
-onAuthStateChanged(auth, (user) => {
+onAuthStateChanged(auth, async (user) => {
 
   if (!user) {
 
@@ -169,6 +53,54 @@ onAuthStateChanged(auth, (user) => {
 
   }
 
-  loadMembers(user.uid);
+  if (!memberId) {
+
+    memberName.textContent = "Member not found";
+    return;
+
+  }
+
+  try {
+
+    const memberRef = doc(db, "users", memberId);
+
+    const memberSnap = await getDoc(memberRef);
+
+    if (!memberSnap.exists()) {
+
+      memberName.textContent = "Member not found";
+      return;
+
+    }
+
+    const member = memberSnap.data();
+
+    memberName.textContent =
+      member.fullName || "Member";
+
+    memberAgeGender.textContent =
+      `${calculateAge(member.dob)} years • ${member.gender || ""}`;
+
+    memberLocation.textContent =
+      `📍 ${member.location || "Location not provided"}`;
+
+    memberGoal.textContent =
+      member.relationshipGoal || "Not specified";
+
+    memberAbout.textContent =
+      member.about || "No description available.";
+
+    // Default profile image
+    memberPhoto.src =
+      "https://via.placeholder.com/150";
+
+  } catch (error) {
+
+    console.error(error);
+
+    memberName.textContent =
+      "Unable to load member profile.";
+
+  }
 
 });
