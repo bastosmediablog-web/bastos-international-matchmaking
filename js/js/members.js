@@ -81,13 +81,13 @@ async function loadMembers(currentUserId) {
             ${member.about || "No description yet."}
           </p>
 
-          <button
-            class="btn btn-primary-brand w-100"
-            disabled>
+          <a
+  href="member.html?id=${document.id}"
+  class="btn btn-primary-brand w-100">
 
-            View Profile
+  View Profile
 
-          </button>
+</a>
 
         </div>
 
