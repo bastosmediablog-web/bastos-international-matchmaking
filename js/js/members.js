@@ -11,7 +11,7 @@ import {
 
 const membersContainer = document.getElementById("membersContainer");
 
-// Calculate age from date of birth
+// Calculate age
 function calculateAge(dob) {
 
   if (!dob) return "Not specified";
@@ -31,16 +31,29 @@ function calculateAge(dob) {
   }
 
   return age;
+
 }
 
-// Display members
+// Get initials for profile placeholder
+function getInitials(name) {
+
+  if (!name) return "M";
+
+  return name
+    .split(" ")
+    .map(word => word.charAt(0))
+    .join("")
+    .substring(0, 2)
+    .toUpperCase();
+
+}
+
+// Load all members
 async function loadMembers(currentUserId) {
 
   try {
 
     const querySnapshot = await getDocs(collection(db, "users"));
-
-    membersContainer.innerHTML = "";
 
     let html = "";
     let totalMembers = 0;
@@ -55,39 +68,65 @@ async function loadMembers(currentUserId) {
 
       html += `
 
-      <div class="col-md-6 col-lg-4">
+      <div class="col-md-6 col-lg-4 mb-4">
 
-        <div class="dashboard-card h-100">
+        <div class="member-profile-card">
 
-          <h3>${member.fullName || "Member"}</h3>
+          <div class="member-photo">
 
-          <p>
-            <strong>Age:</strong><br>
-            ${calculateAge(member.dob)} years
-          </p>
+            ${getInitials(member.fullName)}
 
-          <p>
-            <strong>📍 Location:</strong><br>
-            ${member.location || "Not provided"}
-          </p>
+          </div>
 
-          <p>
-            <strong>💍 Relationship Goal:</strong><br>
-            ${member.relationshipGoal || "Not specified"}
-          </p>
+          <div class="member-body">
 
-          <p>
-            <strong>About Me</strong><br>
-            ${member.about || "No description yet."}
-          </p>
+            <h3>${member.fullName || "Member"}</h3>
 
-          <a
-  href="member.html?id=${document.id}"
-  class="btn btn-primary-brand w-100">
+            <p class="member-age">
 
-  View Profile
+              ${calculateAge(member.dob)} Years • ${member.gender || ""}
 
-</a>
+            </p>
+
+            <p class="member-location">
+
+              📍 ${member.location || "Location not provided"}
+
+            </p>
+
+            <div class="member-goal">
+
+              💍 ${member.relationshipGoal || "Not specified"}
+
+            </div>
+
+            <p class="member-about">
+
+              ${member.about || "This member hasn't added an introduction yet."}
+
+            </p>
+
+            <div class="member-actions">
+
+              <button
+                class="btn btn-outline-brand"
+                disabled>
+
+                ❤️ Like
+
+              </button>
+
+              <a
+                href="member.html?id=${document.id}"
+                class="btn btn-primary-brand">
+
+                👁 View
+
+              </a>
+
+            </div>
+
+          </div>
 
         </div>
 
@@ -105,17 +144,17 @@ async function loadMembers(currentUserId) {
 
         <div class="dashboard-card text-center">
 
-          <h3>No Members Yet</h3>
+          <h2>No Members Yet</h2>
 
           <p>
 
-            You're currently the only registered member.
+            You're currently the only member on Bastos Matchmaking.
 
           </p>
 
           <p>
 
-            Invite your friends to join Bastos Matchmaking.
+            Invite others to join and start making meaningful connections.
 
           </p>
 
@@ -131,27 +170,29 @@ async function loadMembers(currentUserId) {
 
     membersContainer.innerHTML = html;
 
-  } catch (error) {
+  }
 
-    console.error("Members Error:", error);
+  catch (error) {
+
+    console.error(error);
 
     membersContainer.innerHTML = `
 
-    <div class="col-12">
+      <div class="col-12">
 
-      <div class="dashboard-card text-center">
+        <div class="dashboard-card text-center">
 
-        <h3>Something went wrong</h3>
+          <h2>Oops!</h2>
 
-        <p>
+          <p>
 
-          We couldn't load the members list.
+            Unable to load members at the moment.
 
-        </p>
+          </p>
+
+        </div>
 
       </div>
-
-    </div>
 
     `;
 
