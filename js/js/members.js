@@ -1,24 +1,40 @@
-import { auth, db } from "./firebase.js";
+ import { auth, db } from "./firebase.js";
 
 import {
   onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-auth.js";
 
- import {
-  doc,
-  getDoc,
+import {
   collection,
   getDocs
 } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
 
 const membersContainer = document.getElementById("membersContainer");
 
-onAuthStateChanged(auth, async (user) => {
+// Calculate age from date of birth
+function calculateAge(dob) {
 
-  if (!user) {
-    window.location.href = "login.html";
-    return;
+  if (!dob) return "Not specified";
+
+  const birthDate = new Date(dob);
+  const today = new Date();
+
+  let age = today.getFullYear() - birthDate.getFullYear();
+
+  const month = today.getMonth() - birthDate.getMonth();
+
+  if (
+    month < 0 ||
+    (month === 0 && today.getDate() < birthDate.getDate())
+  ) {
+    age--;
   }
+
+  return age;
+}
+
+// Display members
+async function loadMembers(currentUserId) {
 
   try {
 
@@ -26,18 +42,18 @@ onAuthStateChanged(auth, async (user) => {
 
     membersContainer.innerHTML = "";
 
+    let html = "";
     let totalMembers = 0;
 
-    querySnapshot.forEach((doc) => {
+    querySnapshot.forEach((document) => {
 
-      const member = doc.data();
+      if (document.id === currentUserId) return;
 
-      // Don't show the logged-in user
-      if (doc.id === user.uid) return;
+      const member = document.data();
 
       totalMembers++;
 
-      membersContainer.innerHTML += `
+      html += `
 
       <div class="col-md-6 col-lg-4">
 
@@ -45,17 +61,32 @@ onAuthStateChanged(auth, async (user) => {
 
           <h3>${member.fullName || "Member"}</h3>
 
-          <p><strong>📍 Location:</strong><br>
-          ${member.location || "Not provided"}</p>
+          <p>
+            <strong>Age:</strong><br>
+            ${calculateAge(member.dob)} years
+          </p>
 
-          <p><strong>💍 Looking For:</strong><br>
-          ${member.relationshipGoal || "Not specified"}</p>
+          <p>
+            <strong>📍 Location:</strong><br>
+            ${member.location || "Not provided"}
+          </p>
 
-          <p><strong>About Me</strong><br>
-          ${member.about || "No description yet."}</p>
+          <p>
+            <strong>💍 Relationship Goal:</strong><br>
+            ${member.relationshipGoal || "Not specified"}
+          </p>
 
-          <button class="btn btn-primary-brand w-100" disabled>
+          <p>
+            <strong>About Me</strong><br>
+            ${member.about || "No description yet."}
+          </p>
+
+          <button
+            class="btn btn-primary-brand w-100"
+            disabled>
+
             View Profile
+
           </button>
 
         </div>
@@ -70,15 +101,22 @@ onAuthStateChanged(auth, async (user) => {
 
       membersContainer.innerHTML = `
 
-      <div class="col-12 text-center">
+      <div class="col-12">
 
-        <div class="dashboard-card">
+        <div class="dashboard-card text-center">
 
           <h3>No Members Yet</h3>
 
           <p>
-          You're currently the only registered member.
-          Invite others to join Bastos Matchmaking!
+
+            You're currently the only registered member.
+
+          </p>
+
+          <p>
+
+            Invite your friends to join Bastos Matchmaking.
+
           </p>
 
         </div>
@@ -87,23 +125,28 @@ onAuthStateChanged(auth, async (user) => {
 
       `;
 
+      return;
+
     }
+
+    membersContainer.innerHTML = html;
 
   } catch (error) {
 
-    console.error(error);
+    console.error("Members Error:", error);
 
     membersContainer.innerHTML = `
 
-    <div class="col-12 text-center">
+    <div class="col-12">
 
-      <div class="dashboard-card">
+      <div class="dashboard-card text-center">
 
-        <h3>Error</h3>
+        <h3>Something went wrong</h3>
 
         <p>
-        Unable to load members.
-        Please refresh the page.
+
+          We couldn't load the members list.
+
         </p>
 
       </div>
@@ -113,5 +156,19 @@ onAuthStateChanged(auth, async (user) => {
     `;
 
   }
+
+}
+
+// Protect page
+onAuthStateChanged(auth, (user) => {
+
+  if (!user) {
+
+    window.location.href = "login.html";
+    return;
+
+  }
+
+  loadMembers(user.uid);
 
 });
