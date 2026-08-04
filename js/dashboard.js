@@ -12,6 +12,9 @@ import {
 
 
 const userName = document.getElementById("userName");
+const profileProgress = document.getElementById("profileProgress");
+const profileMessage = document.getElementById("profileMessage");
+const matchesContainer = document.getElementById("matchesContainer");
 
 
 onAuthStateChanged(auth, async (user) => {
@@ -37,7 +40,34 @@ onAuthStateChanged(auth, async (user) => {
       const data = userSnap.data();
 
       userName.textContent = data.fullName || "Member";
+// Calculate profile completion
+let completed = 0;
+const totalFields = 6;
 
+if (data.fullName) completed++;
+if (data.gender) completed++;
+if (data.dob) completed++;
+if (data.location) completed++;
+if (data.relationshipGoal || data.goal) completed++;
+if (data.about) completed++;
+
+const percentage = Math.round((completed / totalFields) * 100);
+
+profileProgress.style.width = percentage + "%";
+profileProgress.textContent = percentage + "%";
+
+if (percentage === 100) {
+    profileMessage.textContent = "🎉 Your profile is complete!";
+} else {
+    profileMessage.textContent =
+        `Complete your profile to reach 100%. Current completion: ${percentage}%`;
+}
+     matchesContainer.innerHTML = `
+    <div class="match-preview">
+        <strong>Coming Soon 🚀</strong>
+        <p>Real member suggestions will appear here.</p>
+    </div>
+`;
     } else {
 
       userName.textContent = "Member";
